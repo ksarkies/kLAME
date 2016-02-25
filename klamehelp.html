@@ -1,0 +1,301 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8">
+  <title></title>
+  <meta name="GENERATOR" content="OpenOffice.org 2.0  (Linux)">
+  <meta name="CREATED" content="20060612;20405300">
+  <meta name="CHANGED" content="20060614;13133600">
+  <style>
+	<!--
+		@page { size: 8.5in 11in; margin: 0.79in }
+		P { margin-bottom: 0.08in; color: #000000 }
+		P.western { font-family: "Nimbus Roman No9 L", serif; font-size: 12pt; so-language: en-US }
+		P.cjk { font-family: "Luxi Sans", sans-serif }
+		P.ctl { font-family: "Luxi Sans", sans-serif; font-size: 12pt }
+	-->
+	</style>
+</head>
+<body style="border: medium none ; padding: 0in;" dir="ltr" lang="en-US"
+ text="#000000">
+<p class="western"
+ style="margin-bottom: 0in; font-style: normal; font-family: Helvetica,Arial,sans-serif;"><b><a
+ name="top"></a>kLAME</b>
+is intended for conversion of audio wav to mp3 files using the LAME
+audio file conversion tool. It provides a convenient GUI for LAME,
+allowing a number of conversions to be made in bulk for different
+LAME options (e.g. archival compression, plus compression for
+transmission or website storage).</p>
+<p class="western"
+ style="margin-bottom: 0in; font-style: normal; font-family: Helvetica,Arial,sans-serif;"><font
+ size="4"><u><b>Contents</b></u></font></p>
+<ul style="font-family: Helvetica,Arial,sans-serif;">
+  <li style="font-family: Helvetica,Arial,sans-serif;">
+    <p class="western" style="margin-bottom: 0in;"><a href="#mainform">Main
+Form</a></p>
+  </li>
+  <li>
+    <p class="western" style="margin-bottom: 0in;"><a
+ href="#lameoptions">LAME Options</a></p>
+  </li>
+  <li>
+    <p class="western" style="margin-bottom: 0in;"><a
+ href="#generalsettings"><i><font size="2">General Output Settings</font></i></a></p>
+  </li>
+  <li>
+    <p class="western" style="margin-bottom: 0in;"><a
+ href="#basiclamesettings"><i><font size="2">Basic LAME Settings</font></i></a></p>
+  </li>
+  <li>
+    <p class="western" style="margin-bottom: 0in;"><a
+ href="#advancedlamesettings"><i><font size="2">Advanced LAME Settings</font></i></a></p>
+  </li>
+  <li>
+    <p class="western" style="margin-bottom: 0in;"><a
+ href="#projectsaveformat">Project File Format</a></p>
+  </li>
+</ul>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><a
+ name="mainform"></a>(<a href="klamehelp.html#top">Top</a>) <font
+ size="4"><u><b>Main
+Form</b></u></font></p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;">The
+main window
+provides a table in which each row represents a wav file for
+conversion, and each column represents a conversion option set that
+includes LAME options, a destination directory and a filename tag to
+be added to the end of the base filename, and used to describe the
+converted files.</p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;">The
+window provides a
+toolbar with a set of buttons described below. Columns are provided
+with checkboxes that can be used to control if the filename will be
+converted according to the options set for the particular column. If
+unchecked, no conversion will take place for the corresponding file
+and options set.</p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><b><i>Open/Save
+Project</i></b>. The full set of columns, options and LAME options
+can be saved for later restoration. When saved, the file is given an
+extension of .prj. Note that the filenames are not saved.</p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><b><i>Open
+Files</i></b>.
+This dialogue allows the user to select a list of filenames and have
+them added to a table for later conversion. Additional selections
+will result in the additional files being added.</p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><b><i>Delete
+Row</i></b>.
+Clicking will
+remove the selected row.</p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><b><i>Add
+Columns</i></b>.
+When pressed an additional column is added with default options. The
+column will be added at the end of the existing columns and will be
+given a number following that of the last column.</p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><b><i>Delete
+Column</i></b>.
+Clicking will
+remove the selected column and all associated settings.<br>
+</p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><b><i>LAME
+Options</i></b>.
+When a new column is added, LAME options will normally need to be
+set. These will be set for the selected column, or if no column is
+selected, for the last column. LAME options are described separately
+below.</p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><b><i>Convert</i></b>.
+Begin the conversion operation. This performs all conversions
+requested, silently, and informs with a message box when complete. At
+present there is no way to interrupt this.</p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><a
+ name="lameoptions"></a>
+(<a href="klamehelp.html#top">Top</a>) <font size="4"><u><b>LAME
+Options</b></u><span style="font-weight: bold;"></span><b><br>
+</b></font></p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;">This
+tabbed form
+provides for any option to be passed to LAME. Some of the more common
+options can be set by form controls and fields, while the less common
+options can be added in an edit field in the same format as that used
+by the command-line LAME tool. For the meanings of the LAME options,
+consult the documentation associated with LAME. The most accurate
+source appears to be that provided by running <i>lame - -longhelp</i>
+and <i>lame - -preset help.</i></p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><a
+ name="generalsettings"></a>(<a href="klamehelp.html#top">Top</a>) <font
+ style="font-size: 13pt;" size="3"><i><u><b>Tab 1: General Output
+options:</b></u></i></font></p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><b><i>Column
+number.</i></b>
+This refers to the column for which options are being set. You can
+edit the column header to something a bit more readable.</p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><b><i>Output
+directory.
+</i></b>Allows selection of a different output directory for each
+column.</p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><b><i>Filename
+Tag.
+</i></b>Allows for a tag to be added to the end of the base filename
+(before the first dot) to distinguish the different conversion
+products.</p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><b><i>Save
+LAME settings.</i></b>
+This saves a simple one-line “options string” identical to that
+passed to LAME as options. These saved options can be used for
+creating standard option settings.</p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><b><i>Load
+LAME settings.</i></b>
+When a saved settings file is loaded, the options string from that
+file is parsed and the settings are made into the options form.</p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><a
+ name="basiclamesettings"></a>
+(<a href="klamehelp.html#top">Top</a>) <font style="font-size: 13pt;"
+ size="3"><i><u><b>Tab 2: Basic LAME
+Settings</b></u></i></font><font size="4"><a href="klamehelp.html#top"></a></font></p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><b><i>Preference</i></b>.
+This chooses between VBR (quality) and ABR/CBR (bitrate).</p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><b><i>Relative
+Quality.</i></b>
+This is a slider between 10 and 100, and provides the VBR quality
+setting associated with -v. The LAME option associated with -v is
+determined by subtracting the slider value from 100 and dividing by
+10.</p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><b><i>VBR
+Algorithm.</i></b>
+Chooses between --vbr-old and --vbr-new.</p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><b><i>Bitrate
+and "use
+CBR". </i></b>If CBR is checked, this sets <i>--cbr</i> and <i>-b
+n</i>. If not checked this sets <i>--abr n</i>. The slider provides
+the value of n.</p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><a
+ name="advancedlamesettings"></a>
+(<a href="klamehelp.html#top">Top</a>) <u><b><i><font
+ style="font-size: 13pt;" size="3">Tab 3: Advanced LAME
+settings</font></i></b></u><font size="4"><a href="klamehelp.html#top"></a></font></p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><b><i>Mode
+(-m)</i></b>
+Various mode settings.</p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><b><i>Quality
+(-q).</i></b>
+Setting from a spin box 0-9 with default 5.</p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><b><i>Full
+Bandwidth
+(-k).</i></b> No filtering applied.</p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><b><i>High
+Pass
+Frequency (kHz).</i></b> Filters for restricting the frequencies of
+the signal before conversion.</p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><i><b>High
+Pass Width
+(kHz).</b></i></p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><i><b>Low
+Pass
+Frequency (kHz).</b></i></p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><i><b>Low
+Pass Width
+(kHz).</b></i></p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><b><i>Tonality
+Limit
+(kHz).</i></b> Limit to which audible frequencies are processed.</p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><b><i>Use
+Minimum VBR
+Bitrate (-b)</i></b>. If checked, a VBR minimum bitrate of 115kHz is
+used. This can cause problems with LAME if the value is too low
+compared to the average bitrate.</p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><b><i>Use
+Maximum VBR
+Bitrate (-B).</i></b> If checked, a maximum bitrate can be set on the
+slider. This can also cause problems with LAME.</p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><b><i>Resample
+Frequency.</i></b> If checked, the selected resample frequency
+(allowed values given in the spinbox) is used. This setting produces
+a set of samples of the signal at a different rate than that of the
+original. It can be used to reduce the final bitrate (and so file
+size) where quality is of less importance.</p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><b><i>Change
+Quality
+Measure (-X).</i></b> Measures 0 to 9 given in a spinbox. This
+changes the way that quality is measured by LAME during conversion.</p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><b><i>Additional
+options. </i></b>This allows any other options to be specified. These
+are parsed and, if the checkbox is selected (default), invalid
+options are discarded. Note that the invalid options set may change
+as LAME is developed. Any options added that clash with those set on
+the form will take precedence. Any LAME option can be specified.
+Options relating to terminal outputs are ignored.</p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><a
+ name="projectsaveformat"></a>
+(<a href="klamehelp.html#top">Top</a>) <u><b>Project Save file
+structure</b></u><font size="4"><small><a href="klamehelp.html#top"></a></small></font></p>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><font
+ size="4"><b> </b></font>This is a binary file
+(QT format) with an ASCII header containing the program name and
+date, followed by:</p>
+<ol style="font-family: Helvetica,Arial,sans-serif;">
+  <li>
+    <p class="western" style="margin-bottom: 0in;">Number of columns</p>
+  </li>
+  <li>
+    <p class="western" style="margin-bottom: 0in;">Directory for the
+wav files</p>
+  </li>
+  <li>
+    <p class="western" style="margin-bottom: 0in;">Comment strings</p>
+  </li>
+  <li>
+    <p class="western" style="margin-bottom: 0in;">Filename tags</p>
+  </li>
+  <li>
+    <p class="western" style="margin-bottom: 0in;">Output directories</p>
+  </li>
+  <li>
+    <p class="western" style="margin-bottom: 0in;">LAME option strings</p>
+  </li>
+  <li>
+    <p class="western" style="margin-bottom: 0in;">Column Header labels</p>
+  </li>
+</ol>
+<p class="western"
+ style="margin-bottom: 0in; font-family: Helvetica,Arial,sans-serif;"><br>
+</p>
+</body>
+</html>

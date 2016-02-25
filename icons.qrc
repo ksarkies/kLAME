@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/" >
+        <file>500_setup.png</file>
+        <file>exec.png</file>
+        <file>filenew.png</file>
+        <file>fileopen.png</file>
+        <file>filesave.png</file>
+        <file>gtk-help.png</file>
+        <file>gtk-new.png</file>
+        <file>gtk-open.png</file>
+        <file>gtk-remove.png</file>
+        <file>klame.png</file>
+        <file>klamehelp.html</file>
+        <file>stock-about.png</file>
+        <file>stock-add.png</file>
+        <file>stock-delete.png</file>
+        <file>stock-preferences.png</file>
+        <file>stock-quit.png</file>
+        <file>stock-remove.png</file>
+        <file>stop.png</file>
+        <file>undo_3.png</file>
+    </qresource>
+</RCC>

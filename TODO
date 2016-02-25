@@ -1,0 +1,9 @@
+1. Fix problems where change of columns in main window is not synchronized with
+   the removal in the code.
+2. Handle the presence of ID3 tags (and any other headers).
+3. Add more LAME options to additional tabs in the options dialogue.
+4. Accept other input forms, such as raw PCM.
+5. Do other output forms such as mp3 back to wav etc.
+6. Add some control buttons to the help dialogue.
+
+Ken Sarkies, 9 February 2016

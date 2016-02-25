@@ -1,0 +1,39 @@
+kLAME GUI wrapper for LAME
+--------------------------
+
+I use Ubuntu Linux so all instructions will be biassed to that distribution.
+If other distros are used, note that mp3lame may not be available due to
+intellectual property issues. Refer to the INSTALL-QT4 instructions for
+suggestions.
+
+LAME MP3 saw its last release in 2011 at v3.99 and is unlikely to be further
+developed.
+
+Install the following packages from the Ubunut repositories:
+
+qt4-developer
+qt5-qmake
+g++
+libmp3lame0
+libmp3lame-dev
+
+For compilation from tarball, unpack the source file
+
+$ tar -xjf klame-3.0.0.tar.bz2
+
+change to the klame-3.0.0 directory and run:
+
+$ qmake
+$ make
+
+The binary klame will appear in the same directory and can be copied to a
+suitable location eg /bin, /usr/bin, /usr/local/bin.
+
+For testing, a project file trinity.qlp is provided. I have not put any test
+wav files in as they are too big. The project file may need to be changed to
+suit the paths of your installation. The results go to the archive and mp3
+directories. There are also some predefined settings in the lame-options
+directory.
+
+K. Sarkies
+9 February 2016

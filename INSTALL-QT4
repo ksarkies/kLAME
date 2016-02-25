@@ -1,0 +1,171 @@
+kLAME GUI wrapper for LAME
+--------------------------
+
+NOTE: These instructions are now obsolete as the source code has been adapted to
+QT5 and is not suitable for compilation under QT4. Refer to INSTALL-QT5.
+
+Some instructions here may be useful for installing under distros other than
+Ubuntu, particularly if Lame MP3 is not available. Note that the particular
+dependent packages given here are long outdated.
+
+LINUX:
+-----
+
+I use Fedora Linux so all instructions will be biassed to that distribution.
+
+If you have an updated recent Linux distro of the more common sort, all
+dependencies should be satisfied except for LAME. Many distributions, notably
+Fedora, do not include LAME due to patent issues. You can install a LAME binary
+rpm from the livna repository, or compile LAME from source. Read the section on
+LAME below if you have problems.
+
+Dependencies: versions used at time of writing. It is likely that other versions
+will work. Problems arose under QT 4.2 with the TableView giving odd behaviour.
+
+qt4-4.3.0-9
+gcc-4.1.2-12
+gcc-c++-4.1.2-12
+libgcc-4.1.2-12
+lame-3.97
+
+Compilation from tarball: Unpack the source file
+
+tar -xjf klame-2.0.6.tar.bz2
+
+change to the klame-2.0.6 directory and run:
+
+$ qmake-qt4
+$ make
+
+The binary klame will appear in the same directory and can be copied to a
+suitable location eg /bin /usr/bin /usr/local/bin.
+
+Compilation from source rpm: this will automate the above process.
+
+rpmbuild --rebuild klame-2.0.6-1.src.rpm
+
+locate the binary rpm package (it will be found in one of the architecture
+subdirectories of /usr/src/redhat/RPMS/, check near the end of the console
+output), and install it normally.
+
+For testing, a project file trinity.qlp is provided. I have not put any test
+wav files in as they are too big. The project file may need to be changed to
+suit the paths of your installation. The results go to the archive and mp3
+directories. There are also some predefined settings in the lame-options
+directory.
+
+LAME:
+----
+
+kLAME depends on LAME. For compilation QT needs to be able to find the dynamic
+library file libmp3lame.so.0. qmake-qt4 searches in the directory that contains
+the QT installation, which is probably /usr/lib or /usr/lib64 for a 64-bit
+installation on Linux. You can change that by adding a -L followed by the LAME
+library path into the klame.pro file. If you have installed LAME from a binary
+package such as an rpm, then you should find a file such as libmp3lame.so.0 in
+that directory. Compiling and installing LAME from source is preferable and
+should do all the necessary work. To compile, simply use (replacing the prefix
+directory with the one appropriate for you):
+
+./configure --prefix=/usr
+make
+make install
+
+If during runtime kLAME cannot find the LAME library, then you may also need to
+insert the directory where libmp3lame.so is situated into the /etc/ld.so.conf
+file so that kLAME can find it. This would most likely occur if LAME was
+installed to an uncommon directory. Run ldconfig after making this change.
+
+If you want to statically compile kLAME, then you will need to compile LAME
+and place the libmp3lame.a file in an appropriate library directory. This would
+not normally be done under Linux.
+
+WINDOWS:
+-------
+
+To compile on Windows, the following procedure will compile and statically
+link LAME into the executable. This follows the useful quasi-howto of Sascha
+Sommer and Stefan Gürtler for mplayer, which includes the requirements for
+LAME:
+
+http://www.mplayerhq.hu/MPlayer/releases/win32/contrib/MPlayer-MinGW-Howto.txt.
+
+Note that this does not statically link QT4 if the latter is not statically
+built (see below).
+
+1: Download the latest versions of MinGW, MSYS and the MSYS Developer Tool Kit
+
+http://www.mingw.org/download.shtml
+http://prdownloads.sourceforge.net/mingw/
+
+You may also like to get MinGW-utilities. The first site is the official
+download page, however it does not (at time of writing) contain the packaged
+version of MinGW (only the individual components). The second site seems to
+have more recent versions of all packages, including much of the MinGW package.
+
+The Development Tool Kit is important for running the configure scripts. It is
+a minimalist Bourne shell devised solely for this purpose, and avoids the
+problems associated with installing Cygwin.
+
+The versions used were:
+MinGW-4.1.0.exe
+MSYS-1.0.10.exe
+msysDTK-1.0.1.exe
+
+2. Install these packages in the order shown above.
+
+When installing MSYS, continue with the post install and enter the path to your
+mingw top directory. I am using C:\Development as a base directory for all the
+packages installed here, and installed MinGW under that. Therefore I used
+C:/Development/MinGW (note that forward slashes are used throughout with these
+packages as they make the appropriate conversions).
+
+3. Download LAME from http://lame.sourceforge.net/download/download.html to
+your msys home dir. In my case that is in C:\Development\msys\home\ksarkies.
+The package needed is lame-3.97.tar.gz. Note that although we are working in
+Windows, we are using a Unix-like environment. All necessary tools are provided
+to work with these packages. Strictly speaking you don't really need it in the
+MSYS directory. It can go into a directory of its own. You will just need to add
+the path to the library file (which goes into the subdirectory libmp3lame) to
+the klame.pro file as described below.
+
+4. Open up the package, configure it and compile it:
+
+tar -xvvzf lame-3.97.tar.gz
+cd lame-3.97
+./configure --prefix=C:/Development/MinGW --disable-shared --disable-decoder
+make
+make install
+
+The library file libmp3lame.a ends up in the C:\Development\MinGW\lib directory.
+The klame.pro configuration file for qmake needs to given some extra information
+for gcc to be able to find the library. To do this, we have added the line:
+
+win32:LIBS += -LD:/Development/MinGW/lib -lmp3lame
+
+This will need to be modified to match your installation. The line starting with
+unix: is only used when compiling in a Unix environment, while that starting
+with
+win32: is only used in a windows environment.
+
+Now open a Command window (don't use the MSYS Bourne shell as it doesn't do this
+operation properly), go to the directory where you installed klame, eg
+C:\Development\klame-2.0.6 and type:
+
+qmake
+make
+
+the binary will end up in the release subdirectory.
+
+5. If you want to statically link QT4, follow the directions given at either of the
+following locations:
+
+http://doc.trolltech.com/4.1/deployment-windows.html
+http://qtnode.net/wiki/Building_static
+
+to built QT4 statically, then build the application as above. The resulting exe
+file is very large but you won't need to drag around QT's dlls. Note that building
+QT4 takes several hours, so it is worthwhile getting it right first time.
+
+K. Sarkies
+23 September 2007

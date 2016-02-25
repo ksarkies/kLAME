@@ -1,0 +1,209 @@
+<ui version="4.0" >
+ <class>KLameMainFormBase</class>
+ <widget class="QMainWindow" name="KLameMainFormBase" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>491</width>
+    <height>341</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>kLAME MP3 Converter</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="icons.qrc" >:/klame.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget" >
+   <widget class="QTableWidget" name="mainTable" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>471</width>
+      <height>251</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>491</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuHelp" >
+    <property name="title" >
+     <string>Help</string>
+    </property>
+    <addaction name="actionInstructions" />
+    <addaction name="actionAbout" />
+   </widget>
+   <widget class="QMenu" name="menuFile" >
+    <property name="title" >
+     <string>File</string>
+    </property>
+    <addaction name="actionNewProject" />
+    <addaction name="actionOpenProject" />
+    <addaction name="actionSaveProject" />
+    <addaction name="actionQuit" />
+   </widget>
+   <widget class="QMenu" name="menuRun" >
+    <property name="title" >
+     <string>Run</string>
+    </property>
+    <addaction name="actionConvertFiles" />
+   </widget>
+   <widget class="QMenu" name="menuProject" >
+    <property name="title" >
+     <string>Project</string>
+    </property>
+    <addaction name="actionAddFiles" />
+    <addaction name="actionRemoveFile" />
+    <addaction name="actionAddColumn" />
+    <addaction name="actionDeleteColumn" />
+    <addaction name="actionOptions" />
+   </widget>
+   <addaction name="menuFile" />
+   <addaction name="menuProject" />
+   <addaction name="menuRun" />
+   <addaction name="menuHelp" />
+  </widget>
+  <widget class="QStatusBar" name="statusbar" />
+  <widget class="QToolBar" name="toolBar" >
+   <property name="orientation" >
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <property name="iconSize" >
+    <size>
+     <width>24</width>
+     <height>24</height>
+    </size>
+   </property>
+   <attribute name="toolBarArea" >
+    <number>4</number>
+   </attribute>
+   <addaction name="actionNewProject" />
+   <addaction name="actionOpenProject" />
+   <addaction name="actionSaveProject" />
+   <addaction name="separator" />
+   <addaction name="actionAddFiles" />
+   <addaction name="actionRemoveFile" />
+   <addaction name="actionAddColumn" />
+   <addaction name="actionDeleteColumn" />
+   <addaction name="actionOptions" />
+   <addaction name="separator" />
+   <addaction name="actionConvertFiles" />
+   <addaction name="separator" />
+   <addaction name="actionInstructions" />
+   <addaction name="actionAbout" />
+   <addaction name="separator" />
+   <addaction name="actionQuit" />
+   <addaction name="separator" />
+  </widget>
+  <action name="actionNewProject" >
+   <property name="icon" >
+    <iconset resource="icons.qrc" >:/filenew.png</iconset>
+   </property>
+   <property name="text" >
+    <string>New Project</string>
+   </property>
+  </action>
+  <action name="actionOpenProject" >
+   <property name="icon" >
+    <iconset resource="icons.qrc" >:/fileopen.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Open Project</string>
+   </property>
+  </action>
+  <action name="actionSaveProject" >
+   <property name="icon" >
+    <iconset resource="icons.qrc" >:/filesave.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Save Project</string>
+   </property>
+  </action>
+  <action name="actionQuit" >
+   <property name="icon" >
+    <iconset resource="icons.qrc" >:/stock-quit.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Quit</string>
+   </property>
+  </action>
+  <action name="actionAddFiles" >
+   <property name="icon" >
+    <iconset resource="icons.qrc" >:/gtk-new.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Add Files</string>
+   </property>
+  </action>
+  <action name="actionOptions" >
+   <property name="icon" >
+    <iconset resource="icons.qrc" >:/500_setup.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Options</string>
+   </property>
+  </action>
+  <action name="actionAddColumn" >
+   <property name="icon" >
+    <iconset resource="icons.qrc" >:/stock-add.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Add Column</string>
+   </property>
+  </action>
+  <action name="actionDeleteColumn" >
+   <property name="icon" >
+    <iconset resource="icons.qrc" >:/gtk-remove.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Delete Column</string>
+   </property>
+  </action>
+  <action name="actionInstructions" >
+   <property name="icon" >
+    <iconset resource="icons.qrc" >:/gtk-help.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Instructions</string>
+   </property>
+  </action>
+  <action name="actionAbout" >
+   <property name="icon" >
+    <iconset resource="icons.qrc" >:/stock-about.png</iconset>
+   </property>
+   <property name="text" >
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionConvertFiles" >
+   <property name="icon" >
+    <iconset resource="icons.qrc" >:/exec.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Convert Files</string>
+   </property>
+  </action>
+  <action name="actionRemoveFile" >
+   <property name="icon" >
+    <iconset resource="icons.qrc" >:/stock-remove.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Remove File</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="icons.qrc" />
+ </resources>
+ <connections/>
+</ui>
