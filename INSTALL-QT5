@@ -17,11 +17,7 @@ g++
 libmp3lame0
 libmp3lame-dev
 
-For compilation from tarball, unpack the source file
-
-$ tar -xjf klame-3.0.0.tar.bz2
-
-change to the klame-3.0.0 directory and run:
+change to the klame directory and run:
 
 $ qmake
 $ make

@@ -17,6 +17,8 @@ The main window provides a table with a row for each file and a column for each
 conversion option set that includes LAME options, a destination directory and a
 filename tag used to describe and distinguish the converted files.
 
+More information is found on [Jiggerjuice](http://www.jiggerjuice.info/software/klame/index.html).
+
 Build
 -----
 
@@ -148,8 +150,11 @@ and date, followed by:
 Changes
 -------
 
+kLAME 3.0.1
+1. Update to QT5
+
 kLAME 3.0.0
-1. Update to QT5, replacing some obsolete code hung over from QT3. Currently
+1. Update to QT4, replacing some obsolete code hung over from QT3. Currently
    still suffering from some annoying bugs, but works.
 
 kLAME 2.0.6
